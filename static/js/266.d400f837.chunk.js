@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_homework_template=self.webpackChunkreact_homework_template||[]).push([[266],{1266:function(e,a,t){t.r(a);var r=t(184);a.default=function(){return(0,r.jsx)("div",{children:"Task manager welcome page \ud83d\udc81\u200d\u2640\ufe0f"})}}}]);
+//# sourceMappingURL=266.d400f837.chunk.js.map
