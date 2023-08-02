@@ -1,0 +1,16 @@
+.navContainer {
+  padding: 40px;
+
+  box-shadow: 2px 7px 73px 13px rgba(118, 243, 255, 0.6) inset;
+  -webkit-box-shadow: 2px 7px 73px 13px rgba(118, 243, 255, 0.6) inset;
+  -moz-box-shadow: 2px 7px 73px 13px rgba(118, 243, 255, 0.6) inset;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.register {
+  margin-right: 20px;
+}

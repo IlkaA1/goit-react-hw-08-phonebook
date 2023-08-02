@@ -1,9 +1,9 @@
 import css from './filter.module.css';
 
 import { useDispatch } from 'react-redux';
-import { filterContact } from 'redux/filterSlice';
+import { filterContact } from 'redux/contacts/filterSlice';
 
-const Filter = () => {
+export const Filter = () => {
   const dispatch = useDispatch();
 
   const startFilter = name => {
@@ -20,5 +20,3 @@ const Filter = () => {
     </>
   );
 };
-
-export default Filter;

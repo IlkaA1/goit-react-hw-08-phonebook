@@ -1,10 +1,10 @@
 import css from './list.module.css';
 
-import { selectVisibleContact } from 'redux/selectors';
+import { selectVisibleContact } from 'redux/contacts/selectors';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteContact } from 'redux/operations';
+import { deleteContact } from 'redux/contacts/operations';
 
-const ContactList = () => {
+export const ContactList = () => {
   const list = useSelector(selectVisibleContact);
   const dispatch = useDispatch();
   const toDelete = id => {
@@ -22,5 +22,3 @@ const ContactList = () => {
     </ul>
   );
 };
-
-export default ContactList;

@@ -4,6 +4,6 @@ import { contactsReducer } from './contactsSlice';
 import { filterReducer } from './filterSlice';
 
 export const rootReducer = combineReducers({
-  contacts: contactsReducer,
+  form: contactsReducer,
   filters: filterReducer,
 });

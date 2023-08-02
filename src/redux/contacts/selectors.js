@@ -1,18 +1,21 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-export const selectContakts = state => state.contacts;
+export const selectContakts = state => state.form;
 
-export const selectStatusFilter = state => state.filters.serchName;
+export const selectStatusFilter = state => state.filter.serchName;
 
-export const selectIsLoading = state => state.contacts.isLoading;
+export const selectIsLoading = state => state.form.isLoading;
 
-export const selectError = state => state.contacts.error;
+export const selectError = state => state.form.error;
 
-export const arrContacts = state => state.contacts.items;
+export const selectContacts = state => {
+  return state.form.items;
+};
 
 export const selectVisibleContact = createSelector(
-  [arrContacts, selectStatusFilter],
+  [selectContacts, selectStatusFilter],
   (contacts, filterQwery) => {
+    console.log(contacts);
     const qwery = filterQwery.toLowerCase().toString();
 
     switch (filterQwery) {
