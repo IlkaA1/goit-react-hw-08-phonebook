@@ -19,7 +19,7 @@ const Contacts = () => {
       <div className={css.containerBook}>
         <ContactForm />
         <h2 className={css.contact}>Contacts list</h2>
-        <p>{items && <Filter />}</p>
+        <div>{items && <Filter />}</div>
         <div>
           {isLoading && !error && <b>Request in progress...</b>}
           {error && <p>{error}</p>}

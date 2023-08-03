@@ -15,7 +15,6 @@ export const selectContacts = state => {
 export const selectVisibleContact = createSelector(
   [selectContacts, selectStatusFilter],
   (contacts, filterQwery) => {
-    console.log(contacts);
     const qwery = filterQwery.toLowerCase().toString();
 
     switch (filterQwery) {
