@@ -1,19 +1,76 @@
 .list {
-  border: 3px solid rgb(110, 199, 132);
-  width: 400px;
+  border: 3px solid rgb(80, 3, 116);
+  background: rgb(80, 3, 116, 30%);
+
+  width: 700px;
   padding: 20px;
-  background: rgb(215, 230, 11, 50%);
+  gap: 25px;
 }
 
 .li {
-  margin-bottom: 3px;
+  align-items: center;
+  background: rgb(255, 255, 255);
+  margin-bottom: 7px;
+  padding: 5px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
 }
 
+.name {
+  width: 300px;
+  font-weight: 400;
+  font-size: 15px;
+  color: rgb(80, 3, 116);
+}
 .phone {
+  padding: 2px;
+  width: 200px;
+  background: rgb(95, 87, 161, 30%);
   color: blue;
   text-decoration: underline;
+}
+
+.button {
+  background-color: #e1ecf4;
+  border-radius: 3px;
+  border: 1px solid #7aa7c7;
+  box-shadow: rgba(255, 255, 255, 0.7) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #39739d;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, 'Segoe UI', 'Liberation Sans',
+    sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.15385;
+  margin: 0;
+  outline: none;
+  padding: 8px 0.8em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.button:hover,
+.button:focus {
+  background-color: #b3d3ea;
+  color: #2c5777;
+}
+
+.button:focus {
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, 0.15);
+}
+
+.button:active {
+  background-color: #a0c7e4;
+  box-shadow: none;
+  color: #2c5777;
 }

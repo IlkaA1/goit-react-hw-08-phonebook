@@ -15,8 +15,11 @@ export const ContactList = () => {
     <ul className={css.list}>
       {list.map(contact => (
         <li key={contact.id} className={css.li}>
-          {contact.name}: <div className={css.phone}>{contact.phone}</div>
-          <button onClick={() => toDelete(contact.id)}>Delete</button>
+          <p className={css.name}>{contact.name}:</p>
+          <div className={css.phone}>{contact.number}</div>
+          <button className={css.button} onClick={() => toDelete(contact.id)}>
+            Delete
+          </button>
         </li>
       ))}
     </ul>

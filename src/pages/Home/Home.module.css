@@ -1,0 +1,27 @@
+.title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 34px;
+  color: rgb(80, 3, 116);
+  text-align: center;
+}
+
+.wrapper {
+  width: 600px;
+  /* height: 200px; */
+  line-height: var(--wrapper-width);
+  /* margin: auto; */
+  background: #000;
+  /* background: url('https://tactel.se/wp-content/uploads/2019/11/mobical-1.jpg')
+    no-repeat center; */
+
+  border: 2px dashed #2a2a2a;
+  border-radius: 4px;
+  box-shadow: none;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}

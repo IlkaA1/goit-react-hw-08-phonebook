@@ -1,53 +1,60 @@
-// import ContactForm from './ContactForm/ContactForm';
-// import ContactList from './ContactList/ContactList';
-// import Filter from './Filter/Filter';
-
 import css from './app.module.css';
 
-// import { useDispatch, useSelector } from 'react-redux';
-// import { fetchTasks } from 'redux/operations';
-// import { selectContakts } from 'redux/selectors';
+import { useDispatch } from 'react-redux';
+import { useAuth } from './useAuth';
+import { refreshUser } from '../redux/auth/operations';
 
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import { Header } from './Header/Header';
+import { PrivateRoute } from './PrivateRoute';
+import { RestrictedRoute } from './RestrictedRoute';
 
-const Home = lazy(() => import('../pages/Home'));
-const Register = lazy(() => import('../pages/Register'));
-const Login = lazy(() => import('../pages/Login'));
-const Contacts = lazy(() => import('../pages/Contacts'));
+const Home = lazy(() => import('../pages/Home/Home'));
+const Register = lazy(() => import('../pages/Register/Register'));
+const Login = lazy(() => import('../pages/LogIn/Login'));
+const Contacts = lazy(() => import('../pages/Contact/Contacts'));
 
 export const App = () => {
-  // const dispatch = useDispatch();
-  // const { items, isLoading, error } = useSelector(selectContakts);
-  // useEffect(() => {
-  //   dispatch(fetchTasks());
-  // }, [dispatch]);
-  // return (
-  //   <div className={css.container}>
-  //     <h1>Phonebook</h1>
-  //     <ContactForm />
-  //     <h2>Contacts</h2>
-  //     <p>{items && <Filter />}</p>
-  //     <div>
-  //       {isLoading && !error && <b>Request in progress...</b>}
-  //       {error && <p>{error}</p>}
-  //       {items && <ContactList />}
-  //     </div>
-  //   </div>
-  // );
+  const dispatch = useDispatch();
+  const { isRefreshing } = useAuth();
+  console.log(isRefreshing);
 
-  return (
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
+
+  return isRefreshing ? (
+    <b>Refreshing user...</b>
+  ) : (
     <div>
       <Header />
       <div className={css.container}>
         <Suspense fallback={<div>Loading...</div>}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/contacts" element={<Contacts />} />
+            <Route
+              path="/register"
+              element={
+                <RestrictedRoute
+                  redirectTo="/contacts"
+                  component={<Register />}
+                />
+              }
+            />
+            <Route
+              path="/login"
+              element={
+                <RestrictedRoute redirectTo="/contacts" component={<Login />} />
+              }
+            />
+            <Route
+              path="/contacts"
+              element={
+                <PrivateRoute redirectTo="/login" component={<Contacts />} />
+              }
+            />
           </Routes>
         </Suspense>
       </div>

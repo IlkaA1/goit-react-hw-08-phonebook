@@ -1,4 +1,4 @@
-@import-normalize; /* bring in normalize.css styles */
+@import-normalize;
 
 body {
   margin: 0;
@@ -15,9 +15,11 @@ code {
 }
 
 body {
-  background-color: rgba(226, 212, 193, 0.4);
+  background: #b993d6;
+  background: -webkit-linear-gradient(to right, #8ca6db, #b993d6);
+  background: linear-gradient(to right, #8ca6db, #b993d6);
 
-  font-family: Roboto, sans-serif;
+  font-family: 'Prompt' sans-serif;
   letter-spacing: 0.03em;
   margin: 0 auto;
 }
@@ -39,10 +41,6 @@ ul {
   margin: 0;
   padding: 0;
 }
-
-/* .list {
-  list-style: none;
-} */
 
 img {
   display: block;
